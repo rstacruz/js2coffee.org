@@ -1,0 +1,37 @@
+title: "Js2coffee: convert JavaScript code to CoffeeScript"
+---
+%hgroup#heading
+  %h1 Js2Coffee
+  %h5
+    The JavaScript to CoffeeScript compiler.
+    %a{href: 'http://github.com/rstacruz/js2coffee'}!= "More info &rarr;"
+%form
+  #error
+  %textarea#editor
+  %textarea#output
+%section#info
+  %article
+    %h3 Installation
+    %p Js2coffee is available as a Node.JS module.
+    %pre $ npm install js2coffee
+    %pre $ js2coffee file.js > file.coffee
+    %p
+      See the source code
+      %a{href: 'source/'} here.
+  %article
+    %h3 Info
+    %p
+      Js2coffee helps you migrate projects to 
+      %a{href: 'http://www.coffeescript.org'} CoffeeScript
+      by compiling your JavaScript code into CoffeeScript.
+
+    %p
+      Js2coffee is a project of
+      %a{href: '/'} Rico Sta. Cruz.
+      The source code is available over at
+      %a{href: 'http://github.com/rstacruz/js2coffee'} GitHub.
+
+%script{type: 'text/javascript', charset: 'utf-8', src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'}
+%script{type: 'text/javascript', charset: 'utf-8', src: 'http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.5/underscore-min.js'}
+!= script_tag 'scripts/script.js'
+!= script_tag 'scripts/js2coffee.min.js'

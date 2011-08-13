@@ -1,0 +1,145 @@
+@import 'settings';
+@import 'compass/reset';
+
+@include ae-reset;
+
+html, body { min-height: 100%; }
+
+body {
+  @include gradient(#555, #333);
+  text-shadow: 1px 1px 0 rgba(black, 0.2);
+  color: #ddd; }
+
+#all {
+  min-width: 600px;
+  width: 90%; margin: 0 auto; }
+
+// --------------------------------------------------------------------------------
+
+#heading {
+  & {
+    width: 600px; margin: 0 auto;
+    padding: 30px 0;
+    text-align: center; }
+
+  h1, h5 {
+    margin: 0; padding: 0; }
+
+  h1 {
+    font-weight: normal;
+    font-size: 28pt;
+    font-family: muli, sans-serif; }
+
+  h5 {
+    font-size: 10pt;
+    font-family: muli, sans-serif; }
+
+  a {
+    background: #7bd * 0.5;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: #eee; text-shadow: 1px 1px 0 rgba(black, 0.3);
+    padding: 2px 4px;
+    @include border-radius(2px);
+    @include shadow(1px 1px 0 rgba(black, 0.2)); }
+
+  a:hover {
+    background: #7bd * 0.7;
+    text-decoration: none; }
+}
+
+// --------------------------------------------------------------------------------
+// Textareas
+
+form {
+  position: relative;
+  width: 100%; height: 500px; }
+
+form textarea {
+  @include box-sizing(border-box);
+  padding: 15px; background: #333; color: #ddd;
+  font-family: monaco, monospace;
+  font-size: 9pt;
+  line-height: 1.5;
+  border: solid 1px #333 * 1.2;
+  margin: 0;
+  height: 100%; width: 50%;
+  position: absolute; top: 0; bottom: 0;
+
+  @include shadow(
+    0 2px 5px rgba(black, 0.2),
+    1px 1px 0 rgba(black, 0.2));
+
+  &:focus {
+    background: #333 * 0.95;
+    outline: 0; } }
+
+#error {
+  display: none;
+
+  $color: #a35 * 0.8;
+  z-index: 1;
+  position: absolute; bottom: 5px; right: 5px; left: 5px;
+  @include gradient($color, $color * 0.6);
+  opacity: 0.6;
+  padding: 5px;
+  @include border-radius(2px);
+  @include shadow(
+    inset 0 1px 0 rgba(white, 0.1),
+    1px 1px 0 rgba(black, 0.2));
+  color: #ddd; text-shadow: 1px 1px 0 rgba(black, 0.3); }
+
+#editor {
+  @include border-left-radius(4px);
+  border-right: 0;
+  left: 0; right: 50%; }
+
+#output {
+  @include border-right-radius(4px);
+  border-left: 0;
+  left: 50%; right: 0; }
+
+// --------------------------------------------------------------------------------
+
+#info {
+  & {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px; }
+
+  article {
+    margin: 0 20px;
+    vertical-align: top;
+    display: inline-block; text-align: left;
+    width: 300px; }
+
+  h3, pre, p {
+    margin: 10px 0; }
+
+  p {
+    font-family: muli, sans-serif;
+    color: #aaa; }
+  
+  h3 {
+    text-transform: uppercase;
+    font-size: 8pt;
+    letter-spacing: 1px;
+    color: #888;
+    padding: 0 0 5px 0;
+    margin-bottom: 20px;
+    text-align: left;
+    border-bottom: solid 1px rgba(white, 0.1);
+    @include shadow(0 1px 0 rgba(black, 0.1));
+    font-family: muli, sans-serif; }
+
+  pre {
+    font-family: monaco, monospace;
+    font-size: 9pt;
+    color: #ccc; padding: 5px;
+    @include border-radius(2px);
+    @include shadow(1px 1px 0 rgba(black, 0.5));
+    background: rgba(black, 0.3); }
+
+  a {
+    color: #777; }
+}
