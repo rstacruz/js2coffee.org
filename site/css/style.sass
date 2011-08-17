@@ -22,36 +22,27 @@ a:hover
 
 body
   background: #f2f1ef
-  font-size: 9pt
-  line-height: 1.5
+  font-size: 11pt
+  line-height: 1.6
 
 body, h1, h2, h3, h4, h5, h6, td
-  font-family: muli, sans-serif
+  font-family: palatino, serif
 
 #heading
-  text-align: center
-  padding: 20px 0
+  background: url(/images/js2coffee.png) center 0 no-repeat
+  height: 142px
 
   h1, h5
-    margin: 0
-    padding: 0
-    display: inline-block
-
-  h1
-    font-size: 22pt
-    color: #666
-
-  h5
-    font-size: 10pt
-    color: #aaa
+    display: none
 
 // ============================================================================
 
 #tabs
   overflow: hidden
+  margin-left: 40px
 
   ul
-    +center-list
+    +horiz-list
 
   a
     margin: 0 2px
@@ -76,17 +67,18 @@ body, h1, h2, h3, h4, h5, h6, td
 // ============================================================================
 
 #editors
-  background: #888
+  //+box-shadow(inset 0 3px 3px rgba(black, 0.2))
+  //background: #888
   overflow: hidden
   height: $editorHeight + 10px
-  +box-shadow(inset 0 3px 3px rgba(black, 0.2))
 
   form
     background: $editorPanel
     position: relative
     height: $editorHeight
     margin: 0 30px 10px 30px
-    +box-shadow(0 2px 8px rgba(black, 0.6))
+    border-bottom: solid 3px $editorPanel * 0.9
+    +box-shadow(1px 1px 0 rgba(black, 0.1), 0 2px 8px rgba(black, 0.2))
 
   .editor, .output
     opacity: 0.9
@@ -125,27 +117,66 @@ body, h1, h2, h3, h4, h5, h6, td
   width: 640px
   margin: 0 auto
 
-  h3
-    +border-radius(2px)
-    +box-sizing(border-box)
-    background: rgba(black, 0.5)
-    color: white
-    text-shadow: 1px 1px 0 rgba(black, 0.2)
-    text-transform: uppercase
-    font-size: 8pt
-    padding: 2px 8px
-    
+  h2
+    text-align: center
+    margin: 30px 0 20px 0
+    padding: 0
+    color: #999
+    font-size: 20pt
+
   article
-    width: 300px
+    border-top: solid 1px #ddd
+    padding-top: 10px
+    width: 400px
     margin: 10px
+    padding-left: 200px
     float: left
 
+  h3
+    font-size: sans-serif
+    margin-left: -200px
+    font-weight: normal
+    width: 200px
+    float: left
+    font-size: 12pt
+    color: #bbb
+    
+  pre
+    color: #999
+
+  ul, li
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+  ul
+    margin-left: -200px
+
+  h4
+    color: #999
+    border-top: solid 1px #ddd
+    padding-top: 20px
+    margin-top: 20px
+    font-size: 1em
+
+  code
+    background: #fafafa
+    border: solid 1px #ddd
+    padding: 1px 4px
+
 // ============================================================================
+
 a.github
+  background:
+    //image: url(https://a248.e.akamai.net/assets.github.com/img/5d21241b64dc708fcbb701f68f72f41e9f1fadd6/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67)
+    image: url(https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67)
+    position: 0 0
+    repeat: no-repeat
   display: block
   width: 150px
   height: 150px
   overflow: hidden
   position: absolute
+  text-indent: -9999px
   right: 0
   top: 0
