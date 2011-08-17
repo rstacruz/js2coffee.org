@@ -3,7 +3,8 @@
 
 @include ae-reset
 
-$editorBg: #222C28
+$editorBg: #fff
+$editorPanel: #ddd
 $editorHeight: 600px
 
 @import 'scroll'
@@ -20,7 +21,7 @@ a:hover
   display: none
 
 body
-  background: #ddd
+  background: #f2f1ef
   font-size: 9pt
   line-height: 1.5
 
@@ -69,7 +70,7 @@ body, h1, h2, h3, h4, h5, h6, td
     color: #555
 
   a.active
-    background: white
+    background: $editorPanel
     color: #555
 
 // ============================================================================
@@ -81,7 +82,7 @@ body, h1, h2, h3, h4, h5, h6, td
   +box-shadow(inset 0 3px 3px rgba(black, 0.2))
 
   form
-    background: white
+    background: $editorPanel
     position: relative
     height: $editorHeight
     margin: 0 30px 10px 30px
@@ -97,7 +98,11 @@ body, h1, h2, h3, h4, h5, h6, td
     border: solid 10px $editorBg
     background-color: $editorBg
 
+  .editor
+    +box-shadow(3px 0 2px rgba(black, 0.2), 1px 0 0 rgba(black, 0.2))
+
   .output
+    +box-shadow(0 0 2px rgba(black, 0.2))
     opacity: 0.8
     right: 10px
     left: 50%
