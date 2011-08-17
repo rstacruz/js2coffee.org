@@ -5,8 +5,8 @@ sample_js =
   (function ($) {
     $.fn.highlight = function () {
       $(this).css({ color: 'red', background: 'yellow' });
-        $(this).fadeIn();
-      };
+      $(this).fadeIn();
+    };
   })(jQuery);
   """
 
