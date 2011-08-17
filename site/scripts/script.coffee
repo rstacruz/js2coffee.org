@@ -34,7 +34,7 @@ activate = (id, options) ->
     CoffeeMode = require("ace/mode/coffee").Mode
     editor.getSession().setMode new CoffeeMode()
 
-  editor.getSession().setTabSize 4
+  editor.getSession().setTabSize (options['tabSize'] || 4)
   editor.getSession().setUseSoftTabs true
 
   editor.setHighlightActiveLine false
@@ -49,7 +49,7 @@ activate = (id, options) ->
 
 activate_js2coffee = ->
   editor = activate("js2coffee_editor", type: "javascript")
-  output = activate("js2coffee_output", type: "coffeescript")
+  output = activate("js2coffee_output", type: "coffeescript", tabSize: 2)
 
   onchange = ->
     input = editor.getSession().getValue()
@@ -75,7 +75,7 @@ activate_coffee2js = ->
 
   coffeejs_is_active = true
 
-  editor = activate("coffee2js_editor", type: "coffeescript")
+  editor = activate("coffee2js_editor", type: "coffeescript", tabSize: 2)
   output = activate("coffee2js_output", type: "javascript")
 
   onchange = ->
