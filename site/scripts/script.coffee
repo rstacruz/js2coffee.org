@@ -24,7 +24,7 @@ activate = (id, options) ->
   editor = ace.edit(id)
   s = editor.getSession()
 
-  editor.setTheme "ace/theme/cobalt"
+  editor.setTheme "ace/theme/mono_industrial"
 
   if options.type == "javascript"
     JavaScriptMode = require("ace/mode/javascript").Mode
