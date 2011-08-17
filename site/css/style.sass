@@ -1,0 +1,146 @@
+@import 'settings'
+@import 'compass/reset'
+
+@include ae-reset
+
+$editorBg: #002240
+$editorHeight: 600px
+
+@import 'scroll'
+
+// ============================================================================
+
+html, body
+  min-height: 100%
+
+a:hover
+  text-decoration: none
+
+.hide
+  display: none
+
+body
+  background: #ddd
+  font-size: 9pt
+  line-height: 1.5
+
+body, h1, h2, h3, h4, h5, h6, td
+  font-family: muli, sans-serif
+
+#heading
+  text-align: center
+  padding: 20px 0
+
+  h1, h5
+    margin: 0
+    padding: 0
+    display: inline-block
+
+  h1
+    font-size: 22pt
+    color: #666
+
+  h5
+    font-size: 10pt
+    color: #aaa
+
+// ============================================================================
+
+#tabs
+  overflow: hidden
+
+  ul
+    +center-list
+
+  a
+    margin: 0 2px
+    display: inline-block
+    +gradient(#eee, #eee * 0.95)
+    +border-top-radius(4px)
+    padding: 5px 25px
+    color: #999
+    text-shadow: 1px 1px 0 rgba(white, 0.3)
+    font-family: lato
+    font-weight: 800
+    font-size: 8pt
+
+  a:hover
+    +gradient(#f2f2f2, #f2f2f2 * 0.95)
+    color: #555
+
+  a.active
+    background: white
+    color: #555
+
+// ============================================================================
+
+#editors
+  background: #888
+  overflow: hidden
+  height: $editorHeight + 10px
+  +box-shadow(inset 0 3px 3px rgba(black, 0.2))
+
+  form
+    background: white
+    position: relative
+    height: $editorHeight
+    margin: 0 30px 10px 30px
+    +box-shadow(0 2px 8px rgba(black, 0.6))
+
+  .editor, .output
+    opacity: 0.9
+    position: absolute
+    left: 10px
+    top: 0
+    right: 50%
+    bottom: 0
+    border: solid 10px $editorBg
+    background-color: $editorBg
+
+  .output
+    opacity: 0.8
+    right: 10px
+    left: 50%
+
+  .error
+    +box-sizing(border-box)
+    position: absolute
+    top: 20px
+    left: 50%
+    max-width: 40%
+    padding: 5px 10px
+    background: rgba(#933, 0.9)
+    color: #eee
+    text-shadow: 1px 1px 0 rgba(black, 0.3)
+    z-index: 100
+    
+// ============================================================================
+
+#info
+  width: 640px
+  margin: 0 auto
+
+  h3
+    +border-radius(2px)
+    +box-sizing(border-box)
+    background: rgba(black, 0.5)
+    color: white
+    text-shadow: 1px 1px 0 rgba(black, 0.2)
+    text-transform: uppercase
+    font-size: 8pt
+    padding: 2px 8px
+    
+  article
+    width: 300px
+    margin: 10px
+    float: left
+
+// ============================================================================
+a.github
+  display: block
+  width: 150px
+  height: 150px
+  overflow: hidden
+  position: absolute
+  right: 0
+  top: 0

@@ -1,14 +1,38 @@
 title: "Js2coffee: convert JavaScript code to CoffeeScript"
 ---
+- content_for :head do
+  != style_tag 'css/style.css'
+  %link(href='http://fonts.googleapis.com/css?family=Muli:regular,bold' rel='stylesheet' type='text/css')
+
+%a.github{href: "http://github.com/rstacruz/js2coffee"}
+  %img(style="position: absolute; top: -10px; right: -10px; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub")
+
 %hgroup#heading
   %h1 Js2Coffee
   %h5
     The JavaScript to CoffeeScript compiler.
     %a{href: 'http://github.com/rstacruz/js2coffee'}!= "More info &rarr;"
-%form
-  #error
-  %textarea#editor
-  %textarea#output
+
+%nav#tabs
+  %ul
+    %li
+      %a.active{:href => "#js2coffee"}!= "JS &rarr; Coffee"
+    %li
+      %a{:href => "#coffee2js"}!= "Coffee &rarr; JS"
+
+#editors
+  %form#js2coffee
+    .error.hide#js2coffee_error
+    %pre.editor.left#js2coffee_editor
+    %pre.output.right#js2coffee_output
+
+  %form#coffee2js.hide
+    .error.hide#coffee2js_error
+    %pre.editor.left#coffee2js_editor
+    %pre.output.right#coffee2js_output
+
+  %br
+
 %section#info
   %article
     %h3 Installation
@@ -18,6 +42,7 @@ title: "Js2coffee: convert JavaScript code to CoffeeScript"
     %p
       See the source code
       %a{href: 'source/'} here.
+
   %article
     %h3 Info
     %p
@@ -33,5 +58,11 @@ title: "Js2coffee: convert JavaScript code to CoffeeScript"
 
 %script{type: 'text/javascript', charset: 'utf-8', src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'}
 %script{type: 'text/javascript', charset: 'utf-8', src: 'http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.5/underscore-min.js'}
-!= script_tag 'scripts/script.js'
+
 != script_tag 'scripts/js2coffee.min.js'
+!= script_tag 'scripts/coffeescript.min.js'
+!= script_tag 'scripts/ace/ace.js'
+!= script_tag 'scripts/ace/mode-coffee.js'
+!= script_tag 'scripts/ace/mode-javascript.js'
+!= script_tag 'scripts/ace/theme-cobalt.js'
+!= script_tag 'scripts/script.js'
