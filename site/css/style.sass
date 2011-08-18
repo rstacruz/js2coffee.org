@@ -5,6 +5,7 @@
 
 $orange: #d77d2d
 $brown: #4d362d
+$cream: #e9e7e3
 $linkColor: mix(white, $orange, 80%)
 
 $editorBg: #fff
@@ -65,11 +66,10 @@ body, h1, h2, h3, h4, h5, h6, td
   a.active
     opacity: 1
     color: #333
-    text-shadow: 1px 1px 0 rgba(white, 0.6)
+    text-shadow: 0 0 1px rgba(white, 0.6)
 
     &.js2coffee
       background: $editorPanel
-
     &.coffee2js
       background: $editorPanelTwo
 
@@ -91,11 +91,13 @@ body, h1, h2, h3, h4, h5, h6, td
   form#js2coffee
     background: $editorPanel
     +gradient($editorPanel, mix(white, $editorPanel, 80%))
+    +gradient($editorPanel, $cream)
     border-bottom: solid 2px $editorPanel * 0.9
 
   form#coffee2js
     background: $editorPanelTwo
     +gradient($editorPanelTwo, mix(white, $editorPanelTwo, 80%))
+    +gradient($editorPanelTwo, $cream)
     border-bottom: solid 2px $editorPanelTwo * 0.9
 
   .editor, .output
