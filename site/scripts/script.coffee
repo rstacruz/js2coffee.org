@@ -115,6 +115,16 @@ $("#tabs a").live "click", ->
 
   false
 
+# Automatically resize the editor panes
+$(window).resize ->
+  h = $(window).height() - 65
+  h = 500  if h < 500
+
+  $("#editors").css height: h
+  $("#editors form").css height: h
+
+$(window).trigger 'resize'
 $ ->
   activate_js2coffee()
   $("#js2coffee .editor textarea").focus()
+  $(window).trigger 'resize'

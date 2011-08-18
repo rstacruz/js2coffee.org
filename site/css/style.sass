@@ -9,10 +9,10 @@ $cream: #e9e7e3
 $linkColor: mix(white, $orange, 80%)
 
 $editorBg: #fff
-$editorPanel: #b1dfe7
+$editorPanel: mix($cream, black, 99%)
 $editorHeight: 640px
 
-$editorPanelTwo: mix($orange, white, 40%)
+$editorPanelTwo: desaturate(#b1dfe7, 30%) * 1.1
 
 @import 'scroll'
 
@@ -79,7 +79,7 @@ body, h1, h2, h3, h4, h5, h6, td
   //+box-shadow(inset 0 3px 3px rgba(black, 0.2))
   //background: #888
   overflow: hidden
-  height: $editorHeight + 10px
+  height: $editorHeight
 
   form
     position: relative
