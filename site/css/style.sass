@@ -7,6 +7,7 @@ $editorBg: #fff
 $editorPanel: #ddd
 $editorHeight: 640px
 $orange: #d77d2d
+$brown: #4d362d
 $linkColor: mix(white, $orange, 80%)
 
 @import 'scroll'
@@ -23,7 +24,8 @@ a:hover
   display: none
 
 body
-  background: #f2f1ef
+  //background: #f2f1ef
+  background: $brown url(/images/bg-brown.jpg) fixed
   font-size: 11pt
   line-height: 1.6
 
@@ -51,12 +53,14 @@ body, h1, h2, h3, h4, h5, h6, td
     font-family: lato
     font-weight: 800
     font-size: 8pt
+    opacity: 0.5
 
   a:hover
     +gradient(#f2f2f2, #f2f2f2 * 0.95)
     color: #555
 
   a.active
+    opacity: 1
     background: $editorPanel
     color: #555
 
@@ -110,8 +114,8 @@ body, h1, h2, h3, h4, h5, h6, td
 // ============================================================================
 
 #info
-  background: url(/images/bg-brown.jpg) fixed
-  margin: 20px 0 0 0
+  background: $brown url(/images/bg-brown.jpg) fixed
+  margin: 0 0 0 0
   overflow: hidden
   position: relative
   color: #eee
