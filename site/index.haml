@@ -3,12 +3,6 @@ title: "Js2coffee: convert JavaScript code to CoffeeScript"
 - content_for :head do
   != style_tag 'css/style.css'
 
-%a.github{href: "http://github.com/rstacruz/js2coffee"} Fork me on GitHub
-
-%hgroup#heading
-  %h1 Js2Coffee
-  %h5 The JavaScript to CoffeeScript compiler.
-
 %nav#tabs
   %ul
     %li
@@ -29,36 +23,35 @@ title: "Js2coffee: convert JavaScript code to CoffeeScript"
 
   %br
 
+%a.github{href: "http://github.com/rstacruz/js2coffee"} Fork me on GitHub
+
 %section#info
   %h2
     Js2coffee
 
-  %article
-    %h3 Info
-    %p
-      Js2coffee helps you migrate projects to 
-      %a{href: 'http://www.coffeescript.org'} CoffeeScript
-      by compiling your JavaScript code into CoffeeScript.
-
-    %p
-      Js2coffee is a project of
-      %a{href: '/'} Rico Sta. Cruz.
-      The source code is available over at
-      %a{href: 'http://github.com/rstacruz/js2coffee'} GitHub.
+  .logo
+    %img{src: '/images/logo.gif', style: 'width: 198px; height: 197px;'}
 
   %article
-    %h3 Local usage
-    %p
-      Js2coffee is also available as a Node.JS module.
-    %pre
-      $ npm install js2coffee
-      $ js2coffee file.js > file.coffee
+    .c
+      :markdown
+        ### Information
+        Js2coffee helps you migrate projects to
+        [CoffeeScript](http://www.coffeescript.org) by compiling your
+        JavaScript code into CoffeeScript.
 
-  %article
-    :markdown
-      ### Reporting issues
-      Please report any issues you find over to the [Js2coffee issue tracker](http://github.com/rstacruz/js2coffee/issues).
-      As a courtesy to everyone, be sure to check if your problem has already been reported.
+        Js2coffee is a project of [Rico Sta Cruz](http://ricostacruz.com).
+        The source code is available over at [GitHub](http://github.com/rstacruz/js2coffee).
+
+        ### Local usage
+        Js2coffee is also available as a NodeJS module.
+
+            $ npm install js2coffee
+            $ js2coffee file.js > file.coffee
+
+        ### Reporting issues
+        Please report any issues you find over to the [Js2coffee issue tracker](http://github.com/rstacruz/js2coffee/issues).
+        As a courtesy to everyone, be sure to check if your problem has already been reported.
 
   -# %article
   -#   %h3 Caveats

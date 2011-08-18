@@ -28,17 +28,11 @@ body
 body, h1, h2, h3, h4, h5, h6, td
   font-family: palatino, serif
 
-#heading
-  background: url(/images/js2coffee.png) center 0 no-repeat
-  height: 142px
-
-  h1, h5
-    display: none
-
 // ============================================================================
 
 #tabs
   overflow: hidden
+  margin-top: 20px
   margin-left: 40px
 
   ul
@@ -114,43 +108,66 @@ body, h1, h2, h3, h4, h5, h6, td
 // ============================================================================
 
 #info
-  width: 640px
-  margin: 0 auto
+  background: url(/images/bg-brown.jpg)
+  margin: 20px 0
+  overflow: hidden
+  position: relative
+  color: #eee
+  text-shadow: 1px 1px 0 rgba(black, 0.15)
 
+  a, a:visited
+    color: white
+
+  // Top band
   h2
-    text-align: center
-    margin: 30px 0 20px 0
+    height: 66px
+    text-indent: -9999px
+    background: url(/images/h1.png) center 0 no-repeat
+    margin: 50px 0
     padding: 0
-    color: #999
-    font-size: 20pt
+
+  // Logo band
+  .logo
+    margin: 90px 0 0 0
+    height: 70px
+    background: #eceae6
+    border-top: solid 2px #253a3a
+    border-bottom: solid 2px #253a3a
+    text-align: center
+
+    img
+      position: relative
+      top: -63px
 
   article
-    border-top: solid 1px #ddd
-    padding-top: 10px
-    width: 400px
-    margin: 10px
-    padding-left: 200px
-    float: left
+    background: url(/images/bg-blue.jpg)
+    padding: 20px
+    padding-top: 80px
+
+    >.c
+      width: 400px
+      padding-left: 200px
+      margin: 0 auto
 
   h3
-    font-size: sans-serif
-    margin-left: -200px
-    font-weight: normal
-    width: 200px
-    float: left
-    font-size: 12pt
-    color: #bbb
-    
-  pre
-    color: #999
-
-  ul, li
-    list-style-type: none
     margin: 0
     padding: 0
-
-  ul
     margin-left: -200px
+    margin-top: 28px
+    width: 170px
+    float: left
+    color: #d77d2d
+    text-transform: uppercase
+    font-family: lato
+    text-align: right
+    letter-spacing: 1px
+    font-size: 9pt
+
+  h3:first-child
+    margin-top: 0
+
+  h3+p
+    margin-top: 40px
 
   h4
     color: #999
@@ -160,9 +177,9 @@ body, h1, h2, h3, h4, h5, h6, td
     font-size: 1em
 
   code
-    background: #fafafa
-    border: solid 1px #ddd
-    padding: 1px 4px
+    background: rgba(#fafafa, 0.2)
+    border: solid 1px rgba(#ddd, 0.2)
+    ptopadding: 1px 4px
 
 // ============================================================================
 
@@ -179,4 +196,4 @@ a.github
   position: absolute
   text-indent: -9999px
   right: 0
-  top: 0
+  top: -20px
