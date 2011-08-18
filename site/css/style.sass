@@ -6,6 +6,8 @@
 $editorBg: #fff
 $editorPanel: #ddd
 $editorHeight: 640px
+$orange: #d77d2d
+$linkColor: mix(white, $orange, 80%)
 
 @import 'scroll'
 
@@ -116,7 +118,12 @@ body, h1, h2, h3, h4, h5, h6, td
   text-shadow: 1px 1px 0 rgba(black, 0.15)
 
   a, a:visited
-    color: white
+    color: $linkColor
+    border-bottom: dotted 1px rgba($linkColor, 0.4)
+
+    &:hover
+      background: rgba(black, 0.2)
+      +border-radius(2px)
 
   // Top band
   h2
@@ -156,7 +163,7 @@ body, h1, h2, h3, h4, h5, h6, td
     margin-top: 28px
     width: 170px
     float: left
-    color: #d77d2d
+    color: $orange
     text-transform: uppercase
     font-family: lato
     text-align: right
