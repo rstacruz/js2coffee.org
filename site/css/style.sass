@@ -3,12 +3,15 @@
 
 @include ae-reset
 
-$editorBg: #fff
-$editorPanel: #ddd
-$editorHeight: 640px
 $orange: #d77d2d
 $brown: #4d362d
 $linkColor: mix(white, $orange, 80%)
+
+$editorBg: #fff
+$editorPanel: #b1dfe7
+$editorHeight: 640px
+
+$editorPanelTwo: $orange
 
 @import 'scroll'
 
@@ -45,24 +48,32 @@ body, h1, h2, h3, h4, h5, h6, td
   a
     margin: 0 2px
     display: inline-block
-    +gradient(#eee, #eee * 0.95)
+    //+gradient(#eee, #eee * 0.95)
+    background: rgba($editorPanel, 0.5)
     +border-top-radius(4px)
     padding: 5px 25px
-    color: #999
-    text-shadow: 1px 1px 0 rgba(white, 0.3)
+    color: rgba(#eee, 0.7)
+    text-shadow: 1px 1px 0 rgba(black, 0.3)
     font-family: lato
     font-weight: 800
     font-size: 8pt
-    opacity: 0.5
 
   a:hover
-    +gradient(#f2f2f2, #f2f2f2 * 0.95)
-    color: #555
+    background: rgba($editorPanel, 0.7)
+    color: rgba(#eee, 0.9)
 
   a.active
     opacity: 1
-    background: $editorPanel
-    color: #555
+    color: #333
+    text-shadow: 1px 1px 0 rgba(white, 0.6)
+
+    &.js2coffee
+      background: $editorPanel
+
+    &.coffee2js
+      background: $editorPanelTwo
+      color: #fff
+      text-shadow: 1px 1px 0 rgba(black, 0.3)
 
 // ============================================================================
 
@@ -73,12 +84,18 @@ body, h1, h2, h3, h4, h5, h6, td
   height: $editorHeight + 10px
 
   form
-    background: $editorPanel
     position: relative
     height: $editorHeight
     margin: 0 30px 10px 30px
-    border-bottom: solid 3px $editorPanel * 0.9
     +box-shadow(1px 1px 0 rgba(black, 0.1), 0 2px 8px rgba(black, 0.2))
+
+  form#js2coffee
+    background: $editorPanel
+    border-bottom: solid 3px $editorPanel * 0.9
+
+  form#coffee2js
+    background: $editorPanelTwo
+    border-bottom: solid 3px $editorPanelTwo * 0.9
 
   .editor, .output
     opacity: 0.9
