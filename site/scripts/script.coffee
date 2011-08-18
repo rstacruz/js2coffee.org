@@ -14,8 +14,12 @@ sample_coffee =
   """
   # Type here!
 
-  {compile} = require 'coffeescript'
-  alert compile 'a + b'
+  math =
+    root:   Math.sqrt
+    square: square
+    cube:   (x) -> x * square x
+
+  alert "Three cubed is \#{math.cube 3}"
   """
 
 # Makes an Ace field out of a given <pre> ID.
@@ -37,19 +41,18 @@ activate = (id, options) ->
   editor.getSession().setTabSize (options['tabSize'] || 4)
   editor.getSession().setUseSoftTabs true
 
-  editor.setHighlightActiveLine false
-
   editor.renderer.setShowPrintMargin false
   editor.renderer.setHScrollBarAlwaysVisible false
   editor.renderer.setShowGutter false
 
   editor.setReadOnly true  if options.readonly
+  editor.setHighlightActiveLine false  if options.noActiveLine
 
   editor
 
 activate_js2coffee = ->
   editor = activate("js2coffee_editor", type: "javascript")
-  output = activate("js2coffee_output", type: "coffeescript", tabSize: 2)
+  output = activate("js2coffee_output", type: "coffeescript", tabSize: 2, noActiveLine: true)
 
   onchange = ->
     input = editor.getSession().getValue()
@@ -76,7 +79,7 @@ activate_coffee2js = ->
   coffeejs_is_active = true
 
   editor = activate("coffee2js_editor", type: "coffeescript", tabSize: 2)
-  output = activate("coffee2js_output", type: "javascript")
+  output = activate("coffee2js_output", type: "javascript", noActiveLine: true)
 
   onchange = ->
     input = editor.getSession().getValue()
@@ -117,11 +120,17 @@ $("#tabs a").live "click", ->
 
 # Automatically resize the editor panes
 $(window).resize ->
-  h = $(window).height() - 65
+  h = $(window).height() - 95
   h = 500  if h < 500
 
   $("#editors").css height: h
   $("#editors form").css height: h
+
+# The "more info" button
+$("p.more-info a").live 'click', ->
+  $("body").animate scrollTop: ($("#info").offset().top - 10), 1000
+
+  false
 
 $(window).trigger 'resize'
 $ ->

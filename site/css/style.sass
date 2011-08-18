@@ -108,6 +108,7 @@ body, h1, h2, h3, h4, h5, h6, td
     right: 50%
     bottom: 0
     border: solid 15px $editorBg
+    border-right-width: 5px
     background-color: $editorBg
 
   .editor
@@ -131,6 +132,33 @@ body, h1, h2, h3, h4, h5, h6, td
     text-shadow: 1px 1px 0 rgba(black, 0.3)
     z-index: 100
     
+// ============================================================================
+
+p.more-info
+  margin: 0 0 20px 0
+  padding: 0
+  text-align: center
+
+  a
+    display: inline-block
+    background: rgba(black, 0.5)
+    +border-bottom-radius(4px)
+
+    font-family: lato, sans-serif
+    text-transform: uppercase
+    letter-spacing: 3px
+    font-size: 7pt
+    font-weight: normal
+
+    color: #aaa
+    text-shadow: 1px 1px 0 rgba(black, 0.3)
+
+    padding: 5px 30px
+
+    &:hover
+      background: rgba($orange, 0.7)
+      color: white
+
 // ============================================================================
 
 #info
