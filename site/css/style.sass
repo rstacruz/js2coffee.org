@@ -11,7 +11,7 @@ $editorBg: #fff
 $editorPanel: #b1dfe7
 $editorHeight: 640px
 
-$editorPanelTwo: $orange
+$editorPanelTwo: mix($orange, white, 40%)
 
 @import 'scroll'
 
@@ -72,8 +72,6 @@ body, h1, h2, h3, h4, h5, h6, td
 
     &.coffee2js
       background: $editorPanelTwo
-      color: #fff
-      text-shadow: 1px 1px 0 rgba(black, 0.3)
 
 // ============================================================================
 
@@ -88,14 +86,17 @@ body, h1, h2, h3, h4, h5, h6, td
     height: $editorHeight
     margin: 0 30px 10px 30px
     +box-shadow(1px 1px 0 rgba(black, 0.1), 0 2px 8px rgba(black, 0.2))
+    +border-radius(2px)
 
   form#js2coffee
     background: $editorPanel
-    border-bottom: solid 3px $editorPanel * 0.9
+    +gradient($editorPanel, mix(white, $editorPanel, 80%))
+    border-bottom: solid 2px $editorPanel * 0.9
 
   form#coffee2js
     background: $editorPanelTwo
-    border-bottom: solid 3px $editorPanelTwo * 0.9
+    +gradient($editorPanelTwo, mix(white, $editorPanelTwo, 80%))
+    border-bottom: solid 2px $editorPanelTwo * 0.9
 
   .editor, .output
     opacity: 0.9

@@ -54,20 +54,21 @@ title: "Js2coffee: convert JavaScript code to CoffeeScript"
         As a courtesy to everyone, be sure to check if your problem has already been reported.
 
   -# %article
-  -#   %h3 Caveats
-  -#   %p Please take note of a few inconsistencies that may happen during conversion.
-  -# 
-  -#   %ul
-  -#     %li
-  -#       :markdown
-  -#         #### `==` in CoffeeScript is `===` in JavaScript
-  -#         There is no way to emulate the `==` behavior in CoffeeScript. As such, consider
-  -#         all equality checks to be strict.
-  -# 
-  -#     %li
-  -#       :markdown
-  -#         #### Labels are not supported in CoffeeScript
-  -#         Code like `function() { test1: ... }` will not compile.
+  -#   .c
+  -#     %h2 Caveats
+  -#     %p Please take note of a few inconsistencies that may happen during conversion.
+  -#   
+  -#     %ul
+  -#       %li
+  -#         :markdown
+  -#           #### `==` in CoffeeScript is `===` in JavaScript
+  -#           There is no way to emulate the `==` behavior in CoffeeScript. As such, consider
+  -#           all equality checks to be strict.
+  -#   
+  -#       %li
+  -#         :markdown
+  -#           #### Labels are not supported in CoffeeScript
+  -#           Code like `function() { test1: ... }` will not compile.
 
 %script{type: 'text/javascript', charset: 'utf-8', src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'}
 %script{type: 'text/javascript', charset: 'utf-8', src: 'http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.5/underscore-min.js'}
