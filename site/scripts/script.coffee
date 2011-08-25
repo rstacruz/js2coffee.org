@@ -1,26 +1,78 @@
-sample_js =
-  """
-  /* Type here! */
+samples =
+  js: [
+    """
+    /* Type here! */
 
-  (function ($) {
-    $.fn.highlight = function () {
-      $(this).css({ color: 'red', background: 'yellow' });
-      $(this).fadeIn();
-    };
-  })(jQuery);
-  """
+    (function ($) {
+        $.fn.highlight = function () {
+            $(this).css({ color: 'red', background: 'yellow' });
+            $(this).fadeIn();
+        };
+    })(jQuery);
+    """
+  ,
+    """
+    /* Type here! */
 
-sample_coffee =
-  """
-  # Type here!
+    Scope.prototype.find = function(name, options) {
+        if (this.check(name, options)) {
+            return true;
+        }
+        
+        this.add(name, 'var');
+        return false;
+    }
+    """
+  ,
+    """
+    /* Type here! */
 
-  math =
-    root:   Math.sqrt
-    square: square
-    cube:   (x) -> x * square x
+    Widget = {
+        hide: function() {
+            return this.element
+              .animate({opacity: 0.0, top: -10});
+        },
+        show: function() {
+            return this.element
+              .animate({opacity: 1.0, top: 0});
+        },
+        element: $(".widget")
+    }
+    """
+  ]
+  coffee: [
+    """
+    # Type here!
 
-  alert "Three cubed is \#{math.cube 3}"
-  """
+    math =
+      root:   Math.sqrt
+      square: square
+      cube:   (x) -> x * square x
+
+    alert "Three cubed is \#{math.cube 3}"
+    """
+  ,
+    """
+    # Type here!
+
+    days =
+      monday: 1
+      tuesday: 2
+      wednesday: 3
+      thursday: 4
+      friday: 5
+      saturday: 6
+      sunday: 7
+      
+    if yesterday is thursday
+      today = friday
+      we.excited()
+      we.have ball: today
+    """
+  ]
+
+randomFrom = (arr) ->
+  arr[parseInt(Math.random() * arr.length)]
 
 # Makes an Ace field out of a given <pre> ID.
 #
@@ -67,7 +119,7 @@ activate_js2coffee = ->
       $("#js2coffee .error").show()
 
   editor.getSession().on "change", onchange
-  editor.getSession().setValue sample_js
+  editor.getSession().setValue randomFrom(samples.js)
 
   onchange()
 
@@ -94,7 +146,7 @@ activate_coffee2js = ->
       $("#coffee2js .error").show()
 
   editor.getSession().on "change", onchange
-  editor.getSession().setValue sample_coffee
+  editor.getSession().setValue randomFrom(samples.coffee)
 
   onchange()
 
