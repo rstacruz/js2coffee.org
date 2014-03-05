@@ -1,4 +1,10 @@
 # Js2coffee website
+
+## new repository
+js2coffee's new repository is moved to [js2coffee/js2coffee](https://github.com/js2coffee/js2coffee)
+
+---
+
 #### Made with [Proton](http://sinefunc.com/proton)
 
 This is a Rack project, just use it as so. Alternatively, you can use Proton 
